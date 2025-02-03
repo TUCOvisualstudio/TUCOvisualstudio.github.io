@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUCO Visual Studio</title>
+    <link rel="icon" href="images/icon.png" type="image/png">
+
+    <!-- Estilos de AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100%;
+            background-color: #000000;
+            font-family: 'MainFont', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+/* Botón hamburguesa */
+.menu-hamburguesa {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1001; /* Asegura que esté encima */
+}
+
+.bar {
+    width: 100%;
+    height: 5px;
+    background-color: #be2435; /* Color rojo */
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Menú desplegable */
+.menu-desplegable {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.4s ease-in-out;
+    z-index: 1000; /* Debajo del botón */
+}
+
+/* Estilo de los enlaces del menú */
+.menu-desplegable ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;  /* Cambio: alineación en fila */
+    justify-content: center; /* Centrado horizontal */
+    gap: 30px; /* Espaciado entre elementos */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Ajuste para que las opciones estén alineadas en fila */
+.menu-desplegable ul li {
+    margin: 0; /* Elimina el margen vertical */
+}
+
+/* Estilo de los enlaces */
+.menu-desplegable ul li a {
+    color: #be2435;
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Efecto hover */
+.menu-desplegable ul li a:hover {
+    color: #ffffff; /* Rojo al pasar el mouse */
+}
+
+/* Menú desplegado */
+.menu-desplegado {
+    height: 80px; /* Ajusta la altura para una sola línea */
+}
+
+/* Hacer visible el menú al abrir */
+.menu-desplegado ul {
+    opacity: 1;
+}
+
+
+
+/* Contenedor del video principal */
+.video-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 15px);
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 15px);
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+}
+
+
+
+        /* Sección de contenido */
+        .content-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 50px;
+            background-color: #000000;
+            color: #be2435;
+            gap: 20px;
+            margin: 150px 0; /* Aumenta el margen superior e inferior */
+        }
+
+        .text-content {
+            flex: 1;
+            max-width: 50%;
+            font-size: 2em; /* Ajusta este valor según lo que necesites */
+            line-height: 1.4;
+            margin-bottom: 10px;
+
+        }
+
+        .text-content .name {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .video-content {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        .video-content video {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+/* Contenedor de la barra de videos */
+.video-marquee-container {
+    width: 100%;
+    height: 300px; /* Altura de la barra */
+    overflow: hidden; /* Oculta lo que se sale del contenedor */
+    background-color: black; /* Color de fondo */
+    position: relative;
+    margin-top: 50px; /* Espaciado superior */
+}
+
+/* Contenedor interno con animación */
+.video-marquee {
+    display: flex;
+    gap: 0; /* Sin espacios entre los videos */
+    width: 200%; /* Duplicamos el ancho para efecto infinito */
+    animation: marquee 20s linear infinite; /* Animación continua */
+}
+
+/* Estilo de los videos */
+.video-marquee video {
+    height: 300px; /* Ajustamos la altura */
+    width: auto; /* Se ajusta proporcionalmente */
+}
+
+/* Animación para mover los videos */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+        /* Sección de Proyectos */
+        .projects-section {
+            padding: 50px;
+            background-color: #be2435;
+            background-image: url('images/imgmosaic.png'); /* Imagen de fondo */
+            background-repeat: repeat; /* Repetir en mosaico */
+            background-size: 150px 150px; /* Mantiene el tamaño original */
+            background-position: center;
+            text-align: center;
+            border-radius: 20px;
+            margin: 20px;
+        }
+
+        .projects-section h2 {
+            font-size: 3em;
+            margin-bottom: 40px;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            max-width: 75%;
+            margin: auto;
+        }
+
+        .video-item {
+            position: relative;
+            padding-top: 56.25%;
+            border-radius: 20px;
+            margin-bottom: 30px; /* Ajusta este valor para más espacio */
+        }
+
+        .video-item iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .video-caption {
+            margin-top: 60px;
+            font-size: 1.8em;
+            text-align: center; /* Centra el texto */
+            font-weight: bold; /* Hace el texto en negrita */
+        }
+
+/* Sección de Contacto */
+.contact-section {
+    padding: 80px 50px; /* Aumentamos el padding para más espacio interno */
+    margin-top: 100px;  /* Agregamos margen superior */
+    margin-bottom: 100px; /* Agregamos margen inferior */
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo del título "Contacto" */
+.contact-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-title {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Contenedor de los nombres */
+.contact-content {
+    display: flex;
+    justify-content: space-evenly; /* Mayor separación */
+    width: 100%; /* Aumentamos el ancho */
+    max-width: 3000px; /* Más ancho en pantallas grandes */
+    padding: 0 30px; /* Margen lateral */
+}
+
+/* Estilo del texto */
+.contact-section .text-content {
+    flex: 1;
+    text-align: left;
+    margin: 20px;
+    max-width: 45%; /* Evita que se centren demasiado */
+}
+
+.contact-section .text-content .name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #be2435;
+}
+
+/* Nueva línea de texto debajo del contenedor */
+.contact-info {
+    text-align: center;
+    margin-top: 0px; /* Aumentamos más el espacio entre los contactos y la dirección */
+    width: 100%;
+}
+
+/* Estilo del texto final */
+.contact-address {
+    font-size: 0.9em; /* Tamaño más pequeño */
+    color: #ffffff; /* Color del texto */
+    opacity: 0.8; /* Ligero efecto de transparencia */
+    margin-bottom: 30px; /* Aumentamos el margen inferior para más separación con el borde */
+}
+
+
+
+
+
+/* Responsive */
+        @media (max-width: 768px) {
+            .content-section,
+            .contact-section {
+                flex-direction: column;
+                padding: 50px 20px;
+                text-align: center;
+            }
+
+            .text-content, 
+            .video-content {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Botón de menú hamburguesa -->
+<div class="menu-hamburguesa" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<!-- Menú desplegable -->
+<nav class="menu-desplegable" id="menu">
+    <ul>
+        <li><a href="#visual-studio">Visual Studio</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+    <!-- Video de cabecera -->
+    <div class="video-container">
+        <video id="video" autoplay muted playsinline onended="this.pause()">
+            <source src="videos/1.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+    </div>
+
+<!-- Sección de texto y video -->
+<section id="visual-studio" class="content-section"
+         data-aos="fade-down"
+         data-aos-easing="linear"
+         data-aos-duration="1500">
+    
+    <div class="text-content" data-aos="fade-right">
+        <p><span class="name">Visual Studio</span></p>
+        <p>Somos una postproductora ubicada en el corazón de la colonia Condesa, CDMX, que transforma ideas en arte visual.</p>
+        <p>Con más de un año de experiencia, hemos colaborado con marcas icónicas como Evian, Pizza Hut, Huggies, BMW, AT&T y Clorets, entre otras.</p>
+        <p>Nos especializamos en motion graphics, diseño y animación 3D, modelado, generación de partículas, fluidos y texturas, 
+           así como en la composición, acabado y optimización de escenas para la industria audiovisual.</p>
+        <p>Nuestra dedicación a la creatividad y la innovación nos permite abordar cada proyecto con un enfoque único, elevando la calidad de lo que hacemos.</p>
+    </div>
+
+    <div class="video-content" data-aos="fade-left">
+        <video autoplay muted loop playsinline>
+            <source src="videos/2.mp4" type="video/mp4">
+        </video>
+    </div>
+<!-- Barra de videos en movimiento -->
+<div class="video-marquee-container">
+    <div class="video-marquee">
+        <!-- Primera tanda de videos -->
+        <video autoplay muted loop playsinline>
+            <source src="videos/5.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+            <source src="videos/6.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+            <source src="videos/7.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+            <source src="videos/8.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+            <source src="videos/9.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+            <source src="videos/10.mp4" type="video/mp4">
+        </video>
+
+        <!-- Segunda tanda de videos (duplicados para loop infinito) -->
+        <video autoplay muted loop playsinline>
+            <source src="videos/5.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+            <source src="videos/6.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+            <source src="videos/7.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+            <source src="videos/8.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+            <source src="videos/9.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+            <source src="videos/10.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+
+</section>
+
+
+<!-- Sección de Proyectos con animación -->
+<section id="proyectos" 
+         class="projects-section"
+         data-aos="fade-down"
+         data-aos-easing="linear"
+         data-aos-duration="1500">
+    <h2>Proyectos</h2>
+    <div class="video-grid">
+        <!-- Video 1 -->
+        <div class="video-item">
+            <iframe src="https://player.vimeo.com/video/1052695000?autoplay=1&loop=1&muted=1&controls=0&background=1" allowfullscreen></iframe>
+            <p class="video-caption">PIZZA HUT</p>
+        </div>
+        <!-- Video 2 -->
+        <div class="video-item">
+            <iframe src="https://player.vimeo.com/video/874200350?autoplay=1&loop=1&muted=1&controls=0&background=1" allowfullscreen></iframe>
+            <p class="video-caption">BBVA</p>
+        </div>
+        <!-- Video 3 -->
+        <div class="video-item">
+            <iframe src="https://player.vimeo.com/video/1052693848?autoplay=1&loop=1&muted=1&controls=0&background=1" allowfullscreen></iframe>
+            <p class="video-caption">AT&T</p>
+        </div>
+        <!-- Video 4 -->
+        <div class="video-item">
+            <iframe src="https://player.vimeo.com/video/856876659?autoplay=1&loop=1&muted=1&controls=0&background=1" allowfullscreen></iframe>
+            <p class="video-caption">CLORETS</p>
+        </div>
+        <!-- Video 5 -->
+        <div class="video-item">
+            <iframe src="https://player.vimeo.com/video/856881648?autoplay=1&loop=1&muted=1&controls=0&background=1" allowfullscreen></iframe>
+            <p class="video-caption">FIESTA AMERICANA</p>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de contacto -->
+<section id="contacto" class="contact-section">
+    <div class="contact-header">
+        <h2 class="contact-title">Contacto</h2>
+    </div>
+    <div class="contact-content">
+        <div class="text-content">
+            <p><span class="name">Federico Linares Rossi - Filmmaker</span></p>
+            <p>Co-Founder | Creative Director</p>
+            <p>+52 1 55 4580 2448 | federico.s.linares@gmail.com </p>
+        </div>
+        <div class="text-content">
+            <p><span class="name">Martin Cerdá Diez - Image and Sound Designer</span></p>
+            <p>Co-Founder | VFX Artist and Supervisor</p>
+            <p>+52 1 56 5686 0795 | martincerdadiez@gmail.com</p>
+        </div>
+    </div>
+
+</section>
+    
+    <!-- Nueva línea de texto debajo de los nombres -->
+    <div class="contact-info">
+        <p class="contact-address">TUCO Visual Studio | Av. Parras 22 - Col. Hipódromo Condesa - CDMX</p>
+    </div>
+</section>
+
+
+    <!-- Scripts -->
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("menu-desplegado");
+}
+</script>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init();
+    </script>
+
+</body>
+</html>
