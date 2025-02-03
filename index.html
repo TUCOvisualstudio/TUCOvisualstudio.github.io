@@ -271,9 +271,8 @@ video {
 
 /* Sección de Contacto */
 .contact-section {
-    padding: 80px 50px; /* Aumentamos el padding para más espacio interno */
-    margin-top: 100px;  /* Agregamos margen superior */
-    margin-bottom: 100px; /* Agregamos margen inferior */
+    padding: 80px 50px; /* Espacio interno */
+    margin: 100px 0; /* Margen superior e inferior */
     background-color: #000;
     display: flex;
     flex-direction: column;
@@ -286,10 +285,8 @@ video {
 /* Estilo del título "Contacto" */
 .contact-header {
     width: 100%;
-    text-align: center;
     margin-bottom: 30px;
 }
-
 
 .contact-title {
     font-size: 2.8em;
@@ -311,7 +308,7 @@ video {
     flex: 1;
     text-align: left;
     margin: 20px;
-    max-width: 80%; /* Ajuste para evitar desbordes */
+    max-width: 80%;
 }
 
 .contact-section .text-content .name {
@@ -322,30 +319,30 @@ video {
 
 /* Diseño responsivo para móviles */
 @media (max-width: 768px) {
-    .contact-content .contact-section .text-content .name {
+    .contact-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 30px; /* Más espacio entre elementos */
+        gap: 30px; /* Espacio entre elementos */
     }
 
-    .contact-content .contact-section .text-content .contact-title .contact-header .name {
-        max-width: 100%; /* Asegurar que no se salga del contenedor */
+    .contact-section .text-content {
+        max-width: 100%;
         text-align: center;
     }
 }
-
 
 /* Ajustes adicionales para pantallas muy pequeñas */
 @media (max-width: 480px) {
     .contact-section .text-content .name {
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     .contact-section .text-content p {
-        font-size: 0.4em;
+        font-size: 0.7em;
     }
 }
+
 
 /* Estilo del texto final */
 .contact-address {
