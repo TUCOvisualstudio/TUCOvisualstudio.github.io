@@ -322,25 +322,16 @@ video {
 
 /* Diseño responsivo para móviles */
 @media (max-width: 768px) {
-    .contact-content {
+    .contact-content .contact-section .text-content .name {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 30px; /* Más espacio entre elementos */
     }
 
-    .contact-section .text-content .contact-title .contact-header {
+    .contact-content .contact-section .text-content .contact-title .contact-header .name {
         max-width: 100%; /* Asegurar que no se salga del contenedor */
         text-align: center;
-    }
-
-    /* Ajuste de tamaño de fuente en móviles */
-    .contact-section .text-content .contact-title .contact-header {
-        font-size: 1em; /* Más legible */
-    }
-
-    .contact-section .text-content .contact-title .contact-header {
-        font-size: 0.7em; /* No tan pequeño */
     }
 }
 
@@ -367,7 +358,20 @@ video {
     margin-bottom: 30px; /* Aumentamos el margen inferior para más separación con el borde */
 }
 
+/* Responsive */
+        @media (max-width: 768px) {
+            .content-section,
+            .contact-section {
+                flex-direction: column;
+                padding: 50px 20px;
+                text-align: center;
+            }
 
+            .text-content, 
+            .video-content {
+                max-width: 100%;
+            }
+        }
 
     </style>
 </head>
