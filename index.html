@@ -277,10 +277,43 @@ video {
 /* Contenedor de los nombres */
 .contact-content {
     display: flex;
-    justify-content: space-evenly; /* Mayor separación */
-    width: 100%; /* Aumentamos el ancho */
-    max-width: 3000px; /* Más ancho en pantallas grandes */
-    padding: 0 30px; /* Margen lateral */
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 3000px;
+    padding: 0 10px;
+}
+
+/* Diseño responsivo para móviles */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column; /* Apila los elementos */
+        align-items: center; /* Centra los textos */
+        text-align: center;
+    }
+
+    .contact-section .text-content {
+        max-width: 90%; /* Evita que se vean demasiado anchos */
+    }
+
+    /* Reducir tamaño de fuente en móviles */
+    .contact-section .text-content .name {
+        font-size: 1.3em;
+    }
+
+    .contact-section .text-content p {
+        font-size: 0.9em;
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .contact-section .text-content .name {
+        font-size: 1.1em;
+    }
+
+    .contact-section .text-content p {
+        font-size: 0.8em;
+    }
 }
 
 /* Estilo del texto */
@@ -288,7 +321,7 @@ video {
     flex: 1;
     text-align: left;
     margin: 20px;
-    max-width: 45%; /* Evita que se centren demasiado */
+    max-width: 35%; /* Evita que se centren demasiado */
 }
 
 .contact-section .text-content .name {
@@ -297,23 +330,18 @@ video {
     color: #be2435;
 }
 
-/* Nueva línea de texto debajo del contenedor */
-.contact-info {
-    text-align: center;
-    margin-top: 0px; /* Aumentamos más el espacio entre los contactos y la dirección */
-    width: 100%;
-}
+
 
 /* Estilo del texto final */
 .contact-address {
+    text-align: center;
+    margin-top: 0px; /* Aumentamos más el espacio entre los contactos y la dirección */
+    width: 100%;    
     font-size: 0.9em; /* Tamaño más pequeño */
     color: #ffffff; /* Color del texto */
     opacity: 0.8; /* Ligero efecto de transparencia */
     margin-bottom: 30px; /* Aumentamos el margen inferior para más separación con el borde */
 }
-
-
-
 
 
 /* Responsive */
@@ -470,12 +498,14 @@ video {
     </div>
     <div class="contact-content">
         <div class="text-content">
-            <p><span class="name">Federico Linares Rossi - Filmmaker</span></p>
+            <p><span class="name">Federico Linares Rossi</span></p>
+            <p><span class="name">Filmmaker</span></p>
             <p>Co-Founder | Creative Director</p>
             <p>+52 1 55 4580 2448 | federico.s.linares@gmail.com </p>
         </div>
         <div class="text-content">
-            <p><span class="name">Martin Cerdá Diez - Image and Sound Designer</span></p>
+            <p><span class="name">Martin Cerdá Diez</span></p>
+            <p><span class="name">Image and Sound Designer</span></p>
             <p>Co-Founder | VFX Artist and Supervisor</p>
             <p>+52 1 56 5686 0795 | martincerdadiez@gmail.com</p>
         </div>
