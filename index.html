@@ -62,6 +62,13 @@
     z-index: 1000; /* Debajo del botón */
 }
 
+@media (max-width: 768px) {
+    .menu-hamburguesa {
+        top: 15px;
+        right: 15px;
+    }
+}
+
 /* Estilo de los enlaces del menú */
 .menu-desplegable ul {
     list-style: none;
@@ -107,8 +114,8 @@
 
 /* Contenedor del video principal */
 .video-container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
     position: relative;
     overflow: hidden;
 
@@ -328,7 +335,7 @@ video {
     flex: 1;
     text-align: left;
     margin: 20px;
-    max-width: 35%; /* Evita que se centren demasiado */
+    max-width: 90%; /* Evita que se centren demasiado */
 }
 
 .contact-section .text-content .name {
@@ -352,19 +359,17 @@ video {
 
 
 /* Responsive */
-        @media (max-width: 768px) {
-            .content-section,
-            .contact-section {
-                flex-direction: column;
-                padding: 50px 20px;
-                text-align: center;
-            }
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+        padding: 50px 20px;
+        text-align: center;
+    }
 
-            .text-content, 
-            .video-content {
-                max-width: 100%;
-            }
-        }
+    .content-section > * {
+        max-width: 100%;
+    }
+}
     </style>
 </head>
 <body>
