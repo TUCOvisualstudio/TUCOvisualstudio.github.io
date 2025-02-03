@@ -38,6 +38,14 @@
     z-index: 1001; /* Asegura que esté encima */
 }
 
+@media (max-width: 768px) {
+    .menu-hamburguesa {
+        top: 10px;
+        right: 10%;
+        width: 35px;
+        height: 25px;
+    }
+}
 
 .bar {
     width: 100%;
@@ -106,8 +114,8 @@
 }
 
 @media (max-width: 768px) {
-    .menu-hamburguesa {
-        top: 15px;
+    .menu-desplegable {
+        top: 0px;
         right: 15px;
     }
 }
@@ -312,24 +320,15 @@ video {
 
     /* Reducir tamaño de fuente en móviles */
     .contact-section .text-content .name {
-        font-size: 1em;
-    }
-
-    .contact-section .text-content p {
-        font-size: 0.6em;
-    }
-}
-
-/* Ajustes adicionales para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .contact-section .text-content .name {
-        font-size: 1.1em;
-    }
-
-    .contact-section .text-content p {
         font-size: 0.8em;
     }
+
+    .contact-section .text-content p {
+        font-size: 0.4em;
+    }
 }
+
+
 
 /* Estilo del texto */
 .contact-section .text-content {
@@ -345,7 +344,16 @@ video {
     color: #be2435;
 }
 
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .contact-section .text-content .name {
+        font-size: 0.8em;
+    }
 
+    .contact-section .text-content p {
+        font-size: 0.4em;
+    }
+}
 
 /* Estilo del texto final */
 .contact-address {
