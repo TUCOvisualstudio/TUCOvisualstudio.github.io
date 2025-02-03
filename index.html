@@ -505,6 +505,49 @@ function toggleMenu() {
         // Inicializar AOS
         AOS.init();
     </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const headerVideo = document.getElementById("header-video");
+    const videos = document.querySelectorAll("video:not(#header-video)");
+
+    // Iniciar reproducción del video de cabecera al cargar la página
+    if (headerVideo) {
+        headerVideo.play().catch(error => console.log("Reproducción bloqueada por el navegador:", error));
+        
+        // Pausar solo cuando llega al final
+        headerVideo.addEventListener("ended", function () {
+            this.pause();
+        });
+    }
+
+    // Función para detectar cuando los videos entran en pantalla por primera vez
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const video = entry.target;
+                if (!video.played.length) {
+                    video.play();
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observar todos los videos excepto el de cabecera
+    videos.forEach(video => observer.observe(video));
+
+    // Evitar que los videos se pausen cuando salen de la pantalla
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+            videos.forEach(video => {
+                if (!video.paused) {
+                    video.play();
+                }
+            });
+        }
+    });
+});
+</script>
+
 
 </body>
 </html>
