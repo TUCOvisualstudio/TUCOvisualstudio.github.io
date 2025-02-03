@@ -311,7 +311,7 @@ video {
     flex: 1;
     text-align: left;
     margin: 20px;
-    max-width: 90%; /* Evita que se centren demasiado */
+    max-width: 80%; /* Ajuste para evitar desbordes */
 }
 
 .contact-section .text-content .name {
@@ -323,25 +323,27 @@ video {
 /* Diseño responsivo para móviles */
 @media (max-width: 768px) {
     .contact-content {
-        flex-direction: column; /* Apila los elementos */
-        align-items: center; /* Centra los textos */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        gap: 20px;
+        gap: 30px; /* Más espacio entre elementos */
     }
 
     .contact-section .text-content {
-        max-width: 90%; /* Evita que se vean demasiado anchos */
+        max-width: 100%; /* Asegurar que no se salga del contenedor */
+        text-align: center;
     }
 
-    /* Reducir tamaño de fuente en móviles */
+    /* Ajuste de tamaño de fuente en móviles */
     .contact-section .text-content .name {
-        font-size: 0.8em;
+        font-size: 1em; /* Más legible */
     }
 
     .contact-section .text-content p {
-        font-size: 0.4em;
+        font-size: 0.7em; /* No tan pequeño */
     }
 }
+
 
 /* Ajustes adicionales para pantallas muy pequeñas */
 @media (max-width: 480px) {
