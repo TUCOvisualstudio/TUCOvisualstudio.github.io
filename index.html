@@ -241,60 +241,72 @@ video {
 
 
 
-        /* Sección de Proyectos */
-        .projects-section {
-            padding: 50px;
-            background-color: #191919;
-            background-image: url('images/imgmosaic.png'); /* Imagen de fondo */
-            background-repeat: repeat; /* Repetir en mosaico */
-            background-size: 300px 300px; /* Mantiene el tamaño original */
-            background-position: center;
-            text-align: center;
-            border-radius: 20px;
-            margin: 20px;
-        }
+/* Sección de Proyectos */
+.projects-section {
+    padding: 50px;
+    background-color: #191919;
+    background-image: url('images/imgmosaic.png'); /* Imagen de fondo */
+    background-repeat: repeat; /* Repetir en mosaico */
+    background-size: 300px 300px;
+    background-position: center;
+    text-align: center;
+    border-radius: 20px;
+    margin: 20px;
+}
 
-        .projects-section h2 {
-            font-size: 3em;
-            margin-bottom: 40px;
-        }
+.projects-section h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+}
 
-        .video-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            max-width: 75%;
-            margin: auto;
-        }
+/* Contenedor de videos */
+.video-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    max-width: 100%;
+    margin: auto;
+}
 
-        .video-item {
-            position: relative;
-            padding-top: 56.25%;
-            border-radius: 20px;
-            margin-bottom: 30px; /* Ajusta este valor para más espacio */
-        }
+/* Ajustes para videos */
+.video-item {
+    position: relative;
+    width: 100%;
+    max-width: 85%; /* Ajusta según necesidad */
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden; /* Evita bordes cuadrados si hay bordes redondeados */
+}
 
-        .video-item iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 20px;
-        }
+.video-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
 
-        .video-caption {
-            margin-top: 60px;
-            font-size: 1.8em;
-            text-align: center; /* Centra el texto */
-            font-weight: bold; /* Hace el texto en negrita */
-        }
+/* Texto del video */
+.video-caption {
+    margin-top: 20px;
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .video-item {
+        max-width: 95%; /* Hace que el video sea más ancho en móviles */
+    }
+
+    .video-caption {
+        font-size: 1.5em; /* Reduce el tamaño del texto */
+    }
+}
 
 /* Sección de Contacto */
 .contact-section {
     padding: 80px 50px; /* Espacio interno */
-    margin: 100px 0; /* Margen superior e inferior */
+    margin: 100px 100px; /* Margen superior e inferior */
     background-color: #000;
     display: flex;
     flex-direction: column;
@@ -513,30 +525,33 @@ video {
     <div class="video-grid">
         <!-- Video 1 -->
         <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/1052695000?autoplay=1&loop=1&muted=1&controls=0&background=1" allowfullscreen></iframe>
+            <video src="videos/12.mp4" autoplay loop muted playsinline></video>
             <p class="video-caption">PIZZA HUT</p>
         </div>
         <!-- Video 2 -->
         <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/874200350?autoplay=1&loop=1&muted=1&controls=0&background=1" allowfullscreen></iframe>
+            <video src="videos/13.mp4" autoplay loop muted playsinline></video>
             <p class="video-caption">BBVA</p>
         </div>
         <!-- Video 3 -->
         <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/1052693848?autoplay=1&loop=1&muted=1&controls=0&background=1" allowfullscreen></iframe>
+            <video src="videos/14.mp4" autoplay loop muted playsinline></video>
             <p class="video-caption">AT&T</p>
         </div>
         <!-- Video 4 -->
         <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/856876659?autoplay=1&loop=1&muted=1&controls=0&background=1" allowfullscreen></iframe>
+            <video src="videos/15.mp4" autoplay loop muted playsinline></video>
             <p class="video-caption">CLORETS</p>
         </div>
         <!-- Video 5 -->
         <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/856881648?autoplay=1&loop=1&muted=1&controls=0&background=1" allowfullscreen></iframe>
+            <video src="videos/16.mp4" autoplay loop muted playsinline></video>
             <p class="video-caption">FIESTA AMERICANA</p>
         </div>
     </div>
+
+
+
 
 
 <!-- Sección de contacto -->
@@ -641,6 +656,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Seleccionamos solo los videos dentro de la sección #proyectos
+    const videos = document.querySelectorAll("#proyectos .video-item video");
+
+    // Observer para detectar cuando un video entra en pantalla
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.play(); // Reproducir si está en pantalla
+            } else {
+                entry.target.pause(); // Pausar si sale de pantalla
+            }
+        });
+    }, { threshold: 0.5 }); // Se activa cuando el 50% del video es visible
+
+    // Observar solo los videos de la sección de proyectos
+    videos.forEach(video => observer.observe(video));
+});
+</script>
 
 
 </body>
