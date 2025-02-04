@@ -120,9 +120,27 @@
 }
 
 @media (max-width: 768px) {
-    .menu-desplegable {
-        top: 0px;
-        right: 15px;
+    .menu-desplegable ul {
+        gap: 15px; /* Reduce el espacio entre los elementos */
+    }
+
+    .menu-desplegable ul li a {
+        font-size: 1em; /* Reduce el tamaño del texto en móviles */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .menu-desplegado {
+        height: 50px; /* Reduce la altura */
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-desplegable ul {
+        flex-wrap: nowrap; /* Evita que los elementos bajen de línea */
+        overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
     }
 }
 
