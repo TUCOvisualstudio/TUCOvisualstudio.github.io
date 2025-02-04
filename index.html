@@ -172,7 +172,7 @@ video {
     padding: 100px 50px;
     background-color: #191919;
     color: #717171;
-    gap: 30px;
+    gap: 20px;
     margin: 20px;
     border-radius: 20px;
     border: 8px solid #000000;
@@ -197,12 +197,12 @@ video {
 /* Video */
 .video-content {
     flex: 1;
-    max-width: 45%;
+    max-width: 50%;
 }
 
 .video-content video {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 10px solid #717171;
 }
 
@@ -210,7 +210,7 @@ video {
 @media (max-width: 768px) {
     .content-section {
         flex-direction: column;
-        padding: 50px 20px;
+        padding: 30px 10px;
     }
 
     .text-content, 
@@ -256,6 +256,15 @@ video {
     }
 }
 
+@media (max-width: 768px) {
+    .video-marquee-container {
+        height: 180px; /* Reduce la altura en móviles */
+    }
+
+    .video-marquee video {
+        height: 180px; /* Reduce la altura de los videos */
+    }
+}
 
 
 
