@@ -47,7 +47,7 @@
 @media (max-width: 768px) {
     .menu-hamburguesa {
         top: 10px;
-        right: 10%;
+        right: 5%;
         width: 35px;
         height: 25px;
     }
@@ -198,6 +198,7 @@ video {
 .video-content {
     flex: 1;
     max-width: 50%;
+    border-radius: 10px
 }
 
 .video-content video {
@@ -258,11 +259,11 @@ video {
 
 @media (max-width: 768px) {
     .video-marquee-container {
-        height: 150px; /* Reduce la altura en móviles */
+        height: 120px; /* Reduce la altura en móviles */
     }
 
     .video-marquee video {
-        height: 150px; /* Reduce la altura de los videos */
+        height: 120px; /* Reduce la altura de los videos */
     }
 }
 
@@ -301,7 +302,7 @@ video {
     width: 100%;
     max-width: 85%; /* Ajusta según necesidad */
     margin: auto;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden; /* Evita bordes cuadrados si hay bordes redondeados */
 }
 
@@ -323,6 +324,16 @@ video {
 @media (max-width: 768px) {
     .video-item {
         max-width: 100%; /* Hace que el video sea más ancho en móviles */
+    }
+
+    .projects-section {
+    padding: 10%;
+
+    }
+
+    .projects-section h2 {
+    font-size: 2em;
+
     }
 
     .video-caption {
@@ -384,7 +395,7 @@ video {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 30px; /* Espacio entre elementos */
+        gap: 10%; /* Espacio entre elementos */
     }
 
     .contact-section .text-content {
@@ -393,12 +404,6 @@ video {
     }
 }
 
-/* Diseño responsivo para móviles */
-@media (max-width: 768px) {
-    .contact-title {
-    font-size: 1.5em;
-    }
-}
 
 /* Ajustes adicionales para pantallas muy pequeñas */
 @media (max-width: 480px) {
@@ -423,20 +428,6 @@ video {
     margin-bottom: 30px; /* Aumentamos el margen inferior para más separación con el borde */
 }
 
-/* Responsive */
-        @media (max-width: 768px) {
-            .content-section,
-            .contact-section {
-                flex-direction: column;
-                padding: 50px 20px;
-                text-align: center;
-            }
-
-            .text-content, 
-            .video-content {
-                max-width: 100%;
-            }
-        }
 
     </style>
 </head>
