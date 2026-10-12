@@ -224,7 +224,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>· TUCO Post Studio ·</p>
+  <p>TUCO Visual Studio · Corregir dirección (cambio de domicilio pendiente)</p>
   <!-- TODO: reemplazar "#" por el link real cuando exista la cuenta de Instagram -->
   <a href="#" class="social-link">
     <svg class="social-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -234,6 +234,18 @@
     Instagram
   </a>
 </footer>
+
+<!-- Reproductor de proyectos (semi-pantalla completa, con audio) -->
+<div class="player-modal" id="player-modal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+  <div class="player-backdrop" data-close></div>
+  <div class="player-dialog">
+    <button class="player-close" aria-label="Close" data-close>×</button>
+    <button class="player-nav player-nav--prev" aria-label="Previous project">‹</button>
+    <button class="player-nav player-nav--next" aria-label="Next project">›</button>
+    <video class="player-video" controls playsinline controlslist="nodownload"></video>
+    <p class="player-title"></p>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

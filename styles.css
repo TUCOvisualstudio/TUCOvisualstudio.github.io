@@ -382,6 +382,94 @@ section {
   .strip-arrow { display: none; }
 }
 
+/* Player modal */
+.player-modal[hidden] { display: none; }
+
+.player-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: player-fade 0.25s ease;
+}
+
+.player-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.player-dialog {
+  position: relative;
+  width: min(90vw, calc(70vh * 16 / 9));
+  animation: player-pop 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.player-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 70vh;
+  display: block;
+  background: #000;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.player-title {
+  margin: 1rem 0 0;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  color: var(--fg);
+}
+
+.player-close,
+.player-nav {
+  position: absolute;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  color: var(--fg);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.player-close:hover,
+.player-nav:hover { background: #1a1a1a; border-color: #3a3a3a; }
+
+.player-close { top: -3.5rem; right: 0; }
+.player-nav { top: 50%; transform: translateY(-50%); }
+.player-nav--prev { left: -4rem; }
+.player-nav--next { right: -4rem; }
+
+body.player-open { overflow: hidden; }
+
+@keyframes player-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes player-pop { from { transform: scale(0.96); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+@media (max-width: 900px) {
+  .player-dialog { width: 94vw; }
+  .player-nav { top: auto; bottom: -3.5rem; transform: none; }
+  .player-nav--prev { left: 0; }
+  .player-nav--next { right: 0; }
+  .player-title { text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .player-modal, .player-dialog { animation: none; }
+}
+
 /* Talent */
 .talent-grid {
   display: grid;
