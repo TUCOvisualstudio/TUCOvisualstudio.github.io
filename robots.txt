@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /videos/
+Disallow: /tools/
+Sitemap: https://tucovisualstudio.github.io/sitemap.xml

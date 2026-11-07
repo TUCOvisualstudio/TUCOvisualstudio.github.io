@@ -1,252 +1,454 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TUCO Post Studio</title>
-<link rel="icon" href="images/icon.png" type="image/png">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TUCO Post Studio — Editing, VFX, CGI &amp; Motion Design · Mexico City</title>
+<meta name="description" content="TUCO is a post-production studio in Mexico City. Editing, VFX, CGI, motion design and color for film and advertising — creative craft, advanced technology.">
+<meta name="theme-color" content="#0b0a0a">
+<link rel="canonical" href="https://tucovisualstudio.github.io/">
 
-<header class="site-header">
-  <a href="#top" class="logo">TUCO<span>Post Studio</span></a>
-  <nav class="main-nav">
-    <a href="#visual-studio">Post Studio</a>
-    <a href="#proyectos">Projects</a>
-    <a href="#contacto">Contact</a>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TUCO Post Studio">
+<meta property="og:title" content="TUCO Post Studio — Precision post for film and advertising">
+<meta property="og:description" content="Editing, VFX, CGI, motion design and color. Creative craft, advanced technology. Mexico City — working worldwide.">
+<meta property="og:url" content="https://tucovisualstudio.github.io/">
+<meta property="og:image" content="https://tucovisualstudio.github.io/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/antonio.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="media/posters/reel.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/tuco.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TUCO Post Studio",
+  "alternateName": "TUCO Visual Studio",
+  "url": "https://tucovisualstudio.github.io/",
+  "logo": "https://tucovisualstudio.github.io/assets/img/apple-touch-icon.png",
+  "slogan": "Creative craft. Advanced technology.",
+  "description": "Post-production studio for film and advertising: editing, VFX, CGI, motion design and color.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Mexico City", "addressCountry": "MX" },
+  "contactPoint": [
+    { "@type": "ContactPoint", "contactType": "sales", "name": "Federico Linares Rossi", "email": "federico.s.linares@gmail.com", "telephone": "+52-55-4580-2448", "availableLanguage": ["English", "Spanish"] },
+    { "@type": "ContactPoint", "contactType": "technical support", "name": "Martín Cerdá Diez", "email": "martincerdadiez@gmail.com", "telephone": "+52-56-5686-0795", "availableLanguage": ["English", "Spanish"] }
+  ]
+}
+</script>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+
+<a class="skip" href="#work">Skip to work</a>
+
+<!-- Brand sprite: wordmark traced from the TUCO logo masters -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="tw" fill-rule="evenodd" d="M420 769C402 766 382 758 370 749C352 736 339 718 328 692C324 682 318 663 315 650C314 646 314 642 313 641C313 638 311 628 310 617C306 582 306 580 305 509C305 470 305 438 305 437C305 436 305 400 306 358C307 315 307 254 307 223C306 192 307 153 307 136C308 120 308 92 309 74C310 54 310 39 311 37C313 32 317 27 321 25C323 24 329 22 333 21C340 20 343 20 350 21C365 23 370 27 373 37C375 47 376 98 375 136C374 156 374 271 374 480C375 592 376 611 386 646C392 665 404 683 416 689C423 693 430 694 439 694C454 694 463 690 474 679C493 660 501 630 505 566C506 552 506 535 505 505C505 482 505 450 505 434C506 418 506 383 506 356C506 215 508 48 509 42C512 24 520 19 542 20C554 21 559 22 564 26C572 34 572 30 573 140C575 292 575 560 573 580C570 624 563 660 555 680C554 681 553 684 553 686C541 720 510 753 480 764C463 770 439 771 420 769ZM126 762C112 761 105 756 101 747C99 740 99 716 101 560C101 506 102 436 102 405C102 280 102 239 103 214C104 186 103 141 101 131C98 112 89 108 48 108C30 108 26 108 21 107C14 104 12 103 9 98C4 90 3 66 5 49C7 38 8 36 13 32C21 24 22 24 137 24C244 24 252 24 260 29C267 34 270 44 270 68C270 105 266 108 224 108C202 108 191 109 185 112C181 115 176 120 174 126C173 131 172 132 171 166C170 196 170 459 171 498C172 519 172 551 171 592C171 626 171 674 171 700L170 746L168 751C166 757 162 759 156 761C152 762 133 763 126 762ZM735 757C733 756 728 755 724 754C720 753 712 750 707 747C694 740 678 724 670 710C656 688 645 661 639 632C638 629 638 625 637 622C635 615 634 608 633 600C630 581 630 578 629 570C628 564 627 552 626 542C626 532 624 520 624 515C622 496 621 466 621 412C620 338 622 282 625 250C626 245 626 234 627 227C628 220 628 210 629 206C632 183 633 179 635 166C636 164 636 159 637 155C640 136 647 113 653 98C653 96 654 94 655 92C657 87 666 68 671 60C690 27 717 9 753 5C764 4 768 4 785 8C800 12 812 19 826 32C835 42 842 52 848 65C860 89 865 106 867 133C868 140 869 149 869 153C871 171 870 191 866 198C860 205 833 207 823 201C817 196 816 193 813 164C811 138 807 123 800 108C795 97 788 90 778 85C771 82 770 82 760 82C750 82 749 82 742 85C730 91 723 99 715 116C707 130 700 156 695 182C690 212 686 267 684 323C684 356 686 507 687 524C689 543 690 558 691 564C692 567 692 573 693 577C701 630 711 658 726 672C736 681 751 684 764 681C774 678 780 673 788 664C803 644 809 620 813 564C815 539 816 529 818 526C821 520 828 516 836 516C851 514 861 517 867 525C870 530 872 543 872 558C872 576 869 620 866 638C862 670 850 696 832 719C815 740 795 752 771 757C763 758 740 758 735 757ZM1040 754C1027 753 1023 751 1012 747C1001 742 997 740 986 731C978 725 968 713 960 701C949 684 938 655 933 631C933 627 932 622 931 621C931 619 930 614 929 610C928 607 927 600 926 594C924 578 922 560 920 534C920 526 918 513 918 506C917 494 915 431 915 406C915 381 917 283 918 270C922 213 924 193 928 171C935 131 940 114 951 88C961 64 981 37 996 26C999 25 1001 23 1002 22C1004 20 1015 14 1017 14C1018 14 1021 13 1024 11C1027 9 1032 8 1033 8C1035 8 1037 8 1038 7C1040 4 1068 3 1073 5C1074 6 1077 7 1079 6C1084 6 1094 8 1095 10C1096 12 1097 12 1100 12C1102 12 1105 13 1108 15C1110 16 1115 19 1118 21C1135 31 1153 52 1164 76C1170 88 1179 114 1181 124C1182 128 1182 132 1183 134C1184 135 1184 139 1185 143C1186 146 1186 150 1187 151C1188 152 1188 156 1189 160C1190 164 1191 170 1191 172C1192 175 1192 180 1192 183C1193 186 1193 189 1193 190C1194 191 1194 194 1194 198C1195 202 1196 207 1196 211C1197 215 1197 220 1197 224C1198 228 1198 237 1199 246C1206 342 1205 407 1198 507C1195 551 1194 562 1192 565C1191 567 1190 568 1191 570C1192 571 1191 578 1190 588C1186 610 1185 613 1184 618C1183 620 1182 623 1182 625C1181 630 1180 637 1178 640C1178 642 1176 648 1174 652C1173 658 1171 665 1169 669C1167 673 1166 677 1166 677C1166 678 1156 696 1154 698C1151 702 1150 703 1148 708C1144 714 1128 732 1118 738C1097 752 1067 759 1040 754ZM1065 679C1086 675 1101 661 1110 636C1112 631 1115 625 1116 622C1117 620 1118 617 1118 616C1119 614 1119 611 1120 608C1124 594 1124 590 1125 582C1129 543 1131 532 1132 530C1133 529 1133 529 1132 528C1131 527 1131 525 1132 523C1132 521 1132 517 1132 513C1133 510 1133 503 1133 497C1134 491 1134 485 1135 484C1136 482 1136 480 1135 477C1134 475 1134 472 1134 471C1136 465 1137 405 1137 369C1137 346 1137 332 1134 268C1133 248 1133 239 1134 238C1135 236 1134 235 1133 233C1132 231 1132 229 1132 226C1133 224 1133 221 1132 219C1132 217 1131 212 1131 208C1130 201 1129 190 1127 180C1124 163 1124 161 1125 160C1126 158 1126 158 1124 155C1123 154 1122 150 1122 148C1121 143 1119 138 1117 135C1117 133 1116 132 1116 131C1116 130 1115 127 1114 125C1113 123 1110 119 1109 116C1107 112 1104 107 1101 104C1099 101 1097 98 1097 98C1097 97 1095 96 1093 95C1091 94 1088 92 1086 90C1079 86 1072 84 1060 84C1054 84 1048 84 1046 85C1030 90 1019 100 1010 118C1005 128 1002 135 1002 136C1002 137 1001 139 999 142C998 144 997 146 997 148C998 149 998 151 997 153C995 157 991 183 988 205C985 231 983 251 982 296C980 342 980 446 982 474C983 487 984 504 984 514C986 545 989 575 993 597C994 603 996 610 996 613C997 621 1004 637 1009 648C1021 671 1043 683 1065 679Z"/>
+    <symbol id="tuco-word" viewBox="0 0 1206 772"><use href="#tw" style="fill:var(--word,#be2435)"/></symbol>
+    <symbol id="tuco-lockup" viewBox="0 0 1206 926"><use href="#tw" style="fill:var(--word,#be2435)"/><path style="fill:var(--post,#efebe5)" fill-rule="evenodd" d="M220 923C204 919 193 910 187 895C182 882 192 864 208 856C224 847 248 847 264 856C280 864 290 882 285 895C279 910 268 919 251 923C245 924 226 924 220 923ZM337 922C330 918 322 908 325 905C325 905 327 904 330 904C334 903 334 903 336 907C339 913 346 916 353 916C364 916 372 910 372 902C372 899 371 898 368 895C366 894 363 892 360 891C341 884 336 882 332 877C327 872 327 867 330 861C332 856 334 855 340 852C345 850 347 850 355 850C364 850 365 850 370 852C375 855 380 859 380 861C380 861 378 862 375 863C372 865 370 865 370 864C370 864 368 862 366 860C363 858 361 858 355 858C345 858 340 861 340 868C340 873 343 875 360 881C371 885 374 886 378 890C387 897 386 910 375 918C368 923 364 924 352 924C344 924 342 924 337 922ZM593 923C584 920 580 917 576 910C574 906 574 905 581 904C585 903 585 903 587 906C590 913 597 916 606 916C613 915 619 912 621 908C626 900 622 894 609 890C605 889 601 887 600 887C600 886 599 886 598 886C596 886 586 881 583 878C575 870 579 858 591 852C599 849 613 848 620 852C625 854 631 859 631 861C631 861 629 862 627 863C625 864 623 865 623 865C622 865 621 864 620 863C616 859 613 858 606 858C602 858 598 859 597 859C591 862 589 868 591 871C593 874 600 878 603 878C604 878 605 878 606 879C606 880 607 880 608 880C610 880 611 880 612 881C612 882 613 882 614 882C618 882 628 888 631 892C634 896 634 897 634 902C634 912 628 919 617 923C612 924 596 924 593 923ZM785 922C779 920 774 916 771 912C767 907 766 899 766 874L766 850L772 850L778 850L778 876C778 903 778 905 782 910C787 914 795 916 802 916C811 915 814 914 818 910C823 906 824 902 824 874L824 850L829 850L834 850L834 878L834 906L832 911C828 917 823 920 814 923C808 925 791 924 785 922ZM1092 923C1076 919 1065 910 1059 895C1054 882 1064 864 1080 856C1096 847 1120 847 1136 856C1152 864 1162 882 1157 895C1151 910 1140 919 1123 923C1117 924 1098 924 1092 923ZM100 922C99 921 99 905 99 886L100 850L112 850C130 850 138 852 144 859C149 864 151 870 149 875C145 886 134 892 116 892L110 892L110 908L110 923L105 923C102 923 100 922 100 922ZM442 922C441 921 441 906 441 890L440 858L429 858L418 858L418 854L418 850L447 850L476 850L476 854L476 858L464 858L452 858L452 891L452 923L447 923C444 923 442 922 442 922ZM693 922C692 922 692 907 692 890L692 858L681 858L670 858L670 854L670 850L698 850L726 850L727 854L727 858L716 858L704 858L704 890L704 922L698 923C696 923 693 923 693 922ZM886 922C885 921 885 905 885 886L886 850L900 850C923 850 937 854 948 865C956 874 959 889 953 899C949 908 940 916 928 920C923 922 919 922 904 923C889 923 886 923 886 922ZM1003 922C1002 922 1002 906 1002 886L1002 850L1008 850L1014 850L1014 886L1014 922L1008 923C1006 923 1003 923 1003 922ZM247 915C250 914 252 913 253 913C253 912 254 912 255 912C257 912 265 906 268 903C278 891 275 874 260 864C249 856 224 856 212 864C197 874 194 891 204 903C207 906 215 912 217 912C218 912 219 912 219 913C222 916 239 917 247 915ZM1119 915C1122 914 1124 913 1125 913C1125 912 1126 912 1127 912C1129 912 1137 906 1140 903C1150 891 1147 874 1132 864C1121 856 1096 856 1084 864C1069 874 1066 891 1076 903C1079 906 1087 912 1089 912C1090 912 1091 912 1091 913C1094 916 1111 917 1119 915ZM920 913C931 910 940 904 942 896C944 892 944 881 943 877C940 870 932 864 924 861C917 859 906 858 901 858L896 858L896 886L896 914L906 914C912 914 918 914 920 913ZM131 881C136 878 138 875 138 870C138 864 134 861 124 859C121 858 116 858 114 858L110 858L110 869C110 876 110 881 110 882C111 883 113 883 120 883C125 882 130 882 131 881Z"/></symbol>
+    <!-- 12 fps "boil": the hand-printed wordmark breathing like the stop-motion logo -->
+    <filter id="boil" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="1" result="n">
+        <animate attributeName="seed" values="1;7;3;9" dur="0.333s" calcMode="discrete" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<header class="hd" data-hd>
+  <a class="hd__brand" href="#top" aria-label="TUCO Post Studio — back to top">
+    <svg class="hd__lockup" viewBox="0 0 1206 926" aria-hidden="true"><use href="#tuco-lockup"/></svg>
+  </a>
+  <nav class="hd__nav" id="site-nav" aria-label="Main">
+    <a href="#work"><span class="mono">01</span> Work</a>
+    <a href="#studio"><span class="mono">02</span> Studio</a>
+    <a href="#clients"><span class="mono">03</span> Clients</a>
+    <a href="#contact"><span class="mono">04</span> Contact</a>
   </nav>
-  <button class="nav-toggle" aria-label="Open menu">☰</button>
+  <p class="hd__clock mono" aria-label="Local time in Mexico City"><span class="dot" aria-hidden="true"></span>CDMX <time data-clock>--:--</time> <span class="hd__gmt">GMT−6</span></p>
+  <a class="btn btn--line hd__cta" href="mailto:federico.s.linares@gmail.com?cc=martincerdadiez@gmail.com&amp;subject=New%20project%20%E2%80%94%20TUCO%20Post%20Studio">Start a project</a>
+  <button class="hd__toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr">Menu</span><i></i><i></i></button>
 </header>
 
 <main>
 
-  <section id="visual-studio" class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="videos/REEL.mp4" type="video/mp4">
-    </video>
-    <div class="hero-scrim"></div>
-    <div class="hero-content">
-      <p class="eyebrow">Post-production · Motion · VFX · CGI · Editing · Color Grading</p>
-      <h1>We are a post-production studio that turns ideas into visual art.</h1>
-      <a href="#proyectos" class="cta">View projects <span aria-hidden="true">→</span></a>
+  <!-- HERO ─────────────────────────────────────────────── -->
+  <section class="hero" aria-label="TUCO Post Studio reel">
+    <div class="hero__media">
+      <video class="hero__video" data-hero muted loop playsinline preload="none" poster="media/posters/reel.webp"
+             data-src-lg="media/reel/reel-1600.mp4" data-src-sm="media/reel/reel-960.mp4" aria-hidden="true" tabindex="-1"></video>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="frame" aria-hidden="true">
+        <i class="frame__c frame__c--tl"></i><i class="frame__c frame__c--tr"></i><i class="frame__c frame__c--bl"></i><i class="frame__c frame__c--br"></i>
+        <i class="frame__x"></i>
+        <span class="frame__lbl frame__lbl--tl mono">Reel 2026</span>
+        <span class="frame__lbl frame__lbl--tr mono">TC <span data-tc>00:00:00:00</span></span>
+        <span class="frame__lbl frame__lbl--bl mono">1920 × 1080 · 23.976 fps</span>
+        <span class="frame__lbl frame__lbl--br mono">ACES · Rec.709</span>
+      </div>
+    </div>
+    <div class="hero__content">
+      <p class="eyebrow mono">Post-production · Editing · VFX · CGI · Motion · Color</p>
+      <h1 class="hero__title">We are a post-production studio that turns ideas into visual&nbsp;art.</h1>
+      <div class="hero__actions">
+        <button class="btn btn--solid" type="button" data-play-reel
+                data-src="media/reel/reel.mp4" data-poster="media/posters/reel.webp" data-title="TUCO — Reel 2026">
+          <span class="btn__icon" aria-hidden="true"></span> Watch the reel <span class="mono btn__tc">00:45</span>
+        </button>
+        <a class="btn btn--ghost" href="#work">Selected work <span aria-hidden="true">↓</span></a>
+      </div>
     </div>
   </section>
 
-  <section class="statement">
-    <div class="statement-text">
-      <p class="statement-line"><span>PRECISION</span><span>POST<span class="punct">.</span></span></p>
-      <p class="statement-line"><span>MOTION<span class="punct">,</span></span><span class="word-group"><span>VFX</span><span>AND</span><span>COLOR</span></span></p>
-      <p class="statement-line"><span>FOR</span><span>FILM</span><span>AND</span><span>ADVERTISING<span class="punct">.</span></span></p>
+  <!-- MANIFESTO ─────────────────────────────────────────── -->
+  <section class="manifesto" aria-labelledby="manifesto-title">
+    <h2 id="manifesto-title" class="manifesto__text" data-fit>
+      <span class="line">Precision post<i>.</i></span>
+      <span class="line">Motion<i>,</i> VFX and color</span>
+      <span class="line">for film and advertising<i>.</i></span>
+    </h2>
+    <div class="manifesto__foot">
+      <p class="mono">Creative craft</p>
+      <video class="manifesto__stop" muted loop playsinline preload="none" poster="assets/img/tuco-stop.webp" data-lazy-src="assets/img/tuco-stop.mp4" width="480" height="480" aria-hidden="true" tabindex="-1"></video>
+      <p class="mono">Advanced technology</p>
     </div>
   </section>
 
-  <section class="intro">
-    <div class="intro-text">
-      <p class="intro-line"><span>Using cutting-edge technology<span class="intro-punct">,</span></span></p>
-      <p class="intro-line"><span>Post-production<span class="intro-punct">,</span></span></p>
-      <p class="intro-line"><span>Editing<span class="intro-punct">,</span></span><span>Motion Design<span class="intro-punct">,</span></span></p>
-      <p class="intro-line"><span>CGI<span class="intro-punct">, </span><span></span><span>VFX<span class="intro-punct">, </span></span>Gen AI<span class="intro-punct">, </p>
+  <!-- WORK ─────────────────────────────────────────────── -->
+  <section class="work" id="work" aria-labelledby="work-title">
+    <div class="sec-head">
+      <p class="sec-head__n mono">(01)</p>
+      <h2 id="work-title" class="sec-head__t">Selected work</h2>
+      <p class="sec-head__meta mono">10 films · Commercial · Branded · Short film</p>
     </div>
-    <div class="intro-video">
-      <video autoplay muted loop playsinline>
-        <source src="videos/mollyferrill.mp4" type="video/mp4">
-      </video>
-    </div>
+
+    <ol class="work__grid" data-work>
+      <li class="card card--feature">
+        <button class="card__hit" type="button" data-src="media/work/audi.mp4" data-title="Audi" data-sub="Audi Sport">
+          <span class="card__media">
+            <img src="media/posters/audi.webp" alt="" loading="lazy" decoding="async" width="1280" height="720">
+            <video muted loop playsinline preload="none" data-preview="media/work/audi-p.mp4" aria-hidden="true" tabindex="-1"></video>
+            <i class="reg reg--tl"></i><i class="reg reg--br"></i>
+          </span>
+          <span class="card__meta">
+            <span class="card__n mono">01</span>
+            <span class="card__title">Audi</span>
+            <span class="card__sub">Audi Sport</span>
+            <span class="card__tc mono">00:01:16</span>
+          </span>
+        </button>
+      </li>
+      <li class="card">
+        <button class="card__hit" type="button" data-src="media/work/don-julio.mp4" data-title="Don Julio">
+          <span class="card__media">
+            <img src="media/posters/don-julio.webp" alt="" loading="lazy" decoding="async" width="1280" height="482">
+            <video muted loop playsinline preload="none" data-preview="media/work/don-julio-p.mp4" aria-hidden="true" tabindex="-1"></video>
+            <i class="reg reg--tl"></i><i class="reg reg--br"></i>
+          </span>
+          <span class="card__meta">
+            <span class="card__n mono">02</span>
+            <span class="card__title">Don Julio</span>
+            <span class="card__tc mono">00:00:54</span>
+          </span>
+        </button>
+      </li>
+      <li class="card">
+        <button class="card__hit" type="button" data-src="media/work/adidas-metalbone.mp4" data-title="Adidas" data-sub="Metalbone"
+                data-credits="2025 · Edit, CGI, motion design, VFX and sound design — TUCO">
+          <span class="card__media">
+            <img src="media/posters/adidas-metalbone.webp" alt="" loading="lazy" decoding="async" width="1280" height="720">
+            <video muted loop playsinline preload="none" data-preview="media/work/adidas-metalbone-p.mp4" aria-hidden="true" tabindex="-1"></video>
+            <i class="reg reg--tl"></i><i class="reg reg--br"></i>
+          </span>
+          <span class="card__meta">
+            <span class="card__n mono">03</span>
+            <span class="card__title">Adidas</span>
+            <span class="card__sub">Metalbone</span>
+            <span class="card__tc mono">00:00:30</span>
+          </span>
+        </button>
+      </li>
+      <li class="card">
+        <button class="card__hit" type="button" data-src="media/work/molly-ferrill.mp4" data-title="Molly Ferrill">
+          <span class="card__media">
+            <img src="media/posters/molly-ferrill.webp" alt="" loading="lazy" decoding="async" width="1280" height="490">
+            <video muted loop playsinline preload="none" data-preview="media/work/molly-ferrill-p.mp4" aria-hidden="true" tabindex="-1"></video>
+            <i class="reg reg--tl"></i><i class="reg reg--br"></i>
+          </span>
+          <span class="card__meta">
+            <span class="card__n mono">04</span>
+            <span class="card__title">Molly Ferrill</span>
+            <span class="card__tc mono">00:03:06</span>
+          </span>
+        </button>
+      </li>
+      <li class="card">
+        <button class="card__hit" type="button" data-src="media/work/bbva.mp4" data-title="BBVA">
+          <span class="card__media">
+            <img src="media/posters/bbva.webp" alt="" loading="lazy" decoding="async" width="1280" height="720">
+            <video muted loop playsinline preload="none" data-preview="media/work/bbva-p.mp4" aria-hidden="true" tabindex="-1"></video>
+            <i class="reg reg--tl"></i><i class="reg reg--br"></i>
+          </span>
+          <span class="card__meta">
+            <span class="card__n mono">05</span>
+            <span class="card__title">BBVA</span>
+            <span class="card__tc mono">00:00:30</span>
+          </span>
+        </button>
+      </li>
+      <li class="card">
+        <button class="card__hit" type="button" data-src="media/work/att.mp4" data-title="AT&amp;T">
+          <span class="card__media">
+            <img src="media/posters/att.webp" alt="" loading="lazy" decoding="async" width="1280" height="720">
+            <video muted loop playsinline preload="none" data-preview="media/work/att-p.mp4" aria-hidden="true" tabindex="-1"></video>
+            <i class="reg reg--tl"></i><i class="reg reg--br"></i>
+          </span>
+          <span class="card__meta">
+            <span class="card__n mono">06</span>
+            <span class="card__title">AT&amp;T</span>
+            <span class="card__tc mono">00:00:38</span>
+          </span>
+        </button>
+      </li>
+      <li class="card">
+        <button class="card__hit" type="button" data-src="media/work/nfl.mp4" data-title="NFL" data-sub="Super Bowl LIX · Televisa">
+          <span class="card__media">
+            <img src="media/posters/nfl.webp" alt="" loading="lazy" decoding="async" width="1280" height="720">
+            <video muted loop playsinline preload="none" data-preview="media/work/nfl-p.mp4" aria-hidden="true" tabindex="-1"></video>
+            <i class="reg reg--tl"></i><i class="reg reg--br"></i>
+          </span>
+          <span class="card__meta">
+            <span class="card__n mono">07</span>
+            <span class="card__title">NFL</span>
+            <span class="card__sub">Super Bowl LIX · Televisa</span>
+            <span class="card__tc mono">00:00:30</span>
+          </span>
+        </button>
+      </li>
+      <li class="card">
+        <button class="card__hit" type="button" data-src="media/work/fiesta-americana.mp4" data-title="Fiesta Americana">
+          <span class="card__media">
+            <img src="media/posters/fiesta-americana.webp" alt="" loading="lazy" decoding="async" width="1280" height="870">
+            <video muted loop playsinline preload="none" data-preview="media/work/fiesta-americana-p.mp4" aria-hidden="true" tabindex="-1"></video>
+            <i class="reg reg--tl"></i><i class="reg reg--br"></i>
+          </span>
+          <span class="card__meta">
+            <span class="card__n mono">08</span>
+            <span class="card__title">Fiesta Americana</span>
+            <span class="card__tc mono">00:01:26</span>
+          </span>
+        </button>
+      </li>
+      <li class="card">
+        <button class="card__hit" type="button" data-src="media/work/pizza-hut.mp4" data-title="Pizza Hut" data-sub="My Box"
+                data-credits="2024 · Production — Gato.tv · Post — TUCO · Motion graphics &amp; compositing">
+          <span class="card__media">
+            <img src="media/posters/pizza-hut.webp" alt="" loading="lazy" decoding="async" width="1280" height="720">
+            <video muted loop playsinline preload="none" data-preview="media/work/pizza-hut-p.mp4" aria-hidden="true" tabindex="-1"></video>
+            <i class="reg reg--tl"></i><i class="reg reg--br"></i>
+          </span>
+          <span class="card__meta">
+            <span class="card__n mono">09</span>
+            <span class="card__title">Pizza Hut</span>
+            <span class="card__sub">My Box</span>
+            <span class="card__tc mono">00:00:29</span>
+          </span>
+        </button>
+      </li>
+      <li class="card">
+        <button class="card__hit" type="button" data-src="media/work/clorets.mp4" data-title="Clorets">
+          <span class="card__media">
+            <img src="media/posters/clorets.webp" alt="" loading="lazy" decoding="async" width="1280" height="720">
+            <video muted loop playsinline preload="none" data-preview="media/work/clorets-p.mp4" aria-hidden="true" tabindex="-1"></video>
+            <i class="reg reg--tl"></i><i class="reg reg--br"></i>
+          </span>
+          <span class="card__meta">
+            <span class="card__n mono">10</span>
+            <span class="card__title">Clorets</span>
+            <span class="card__tc mono">00:00:20</span>
+          </span>
+        </button>
+      </li>
+    </ol>
   </section>
 
-  <div class="marquee">
-    <div class="marquee-track">
-      <video autoplay muted loop playsinline><source src="videos/4.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/5.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/6.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/7.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/8.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/9.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/10.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/11.mp4" type="video/mp4"></video>
-      <!-- duplicado para loop continuo -->
-      <video autoplay muted loop playsinline><source src="videos/4.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/5.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/6.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/7.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/8.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/9.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/10.mp4" type="video/mp4"></video>
-      <video autoplay muted loop playsinline><source src="videos/11.mp4" type="video/mp4"></video>
+  <!-- FILM STRIP ────────────────────────────────────────── -->
+  <div class="strip" aria-hidden="true" data-strip>
+    <div class="strip__track">
+      <div class="strip__set">
+        <figure><video muted loop playsinline preload="none" data-strip-src="media/strip/s01.mp4"></video><figcaption class="mono">TUCO ▸ 0001</figcaption></figure>
+        <figure><video muted loop playsinline preload="none" data-strip-src="media/strip/s02.mp4"></video><figcaption class="mono">TUCO ▸ 0002</figcaption></figure>
+        <figure><video muted loop playsinline preload="none" data-strip-src="media/strip/s03.mp4"></video><figcaption class="mono">TUCO ▸ 0003</figcaption></figure>
+        <figure><video muted loop playsinline preload="none" data-strip-src="media/strip/s04.mp4"></video><figcaption class="mono">TUCO ▸ 0004</figcaption></figure>
+        <figure><video muted loop playsinline preload="none" data-strip-src="media/strip/s05.mp4"></video><figcaption class="mono">TUCO ▸ 0005</figcaption></figure>
+        <figure><video muted loop playsinline preload="none" data-strip-src="media/strip/s06.mp4"></video><figcaption class="mono">TUCO ▸ 0006</figcaption></figure>
+        <figure><video muted loop playsinline preload="none" data-strip-src="media/strip/s07.mp4"></video><figcaption class="mono">TUCO ▸ 0007</figcaption></figure>
+        <figure><video muted loop playsinline preload="none" data-strip-src="media/strip/s08.mp4"></video><figcaption class="mono">TUCO ▸ 0008</figcaption></figure>
+      </div>
     </div>
   </div>
 
-  <section id="proyectos" class="projects">
-    <div class="section-head">
-      <p class="eyebrow">Selected work</p>
-      <h2>Projects</h2>
+  <!-- STUDIO ───────────────────────────────────────────── -->
+  <section class="studio" id="studio" aria-labelledby="studio-title">
+    <div class="sec-head">
+      <p class="sec-head__n mono">(02)</p>
+      <h2 id="studio-title" class="sec-head__t">Studio</h2>
+      <p class="sec-head__meta mono">Post Studio · Est. Mexico City</p>
     </div>
 
-    <div class="featured-wrap">
-      <button class="strip-arrow strip-arrow--left" aria-label="Previous">‹</button>
-      <div class="featured-strip">
+    <p class="studio__lead" data-reveal>
+      Using cutting-edge technology, we take a film from first cut to final pixel — <em>editing, motion design, CGI, VFX and Gen&nbsp;AI</em> under one roof, built for productions that can’t afford to compromise.
+    </p>
 
-        <article class="featured-card">
-          <div class="featured-thumb">
-            <video class="featured-video" muted loop playsinline preload="metadata">
-              <source src="videos/mollyferrill.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h3 class="featured-name">MOLLY FERRILL</h3>
-        </article>
+    <ol class="caps">
+      <li class="caps__row" data-reveal>
+        <span class="caps__n mono">01</span>
+        <h3 class="caps__t">Editing</h3>
+        <p class="caps__d">Story first. From offline to online, with every cut-down, ratio and deliverable versioned from the same timeline.</p>
+      </li>
+      <li class="caps__row" data-reveal>
+        <span class="caps__n mono">02</span>
+        <h3 class="caps__t">VFX &amp; Compositing</h3>
+        <p class="caps__d">Clean-ups, set extensions and CG integration. Invisible when it should be, impossible when it needs to be.</p>
+      </li>
+      <li class="caps__row" data-reveal>
+        <span class="caps__n mono">03</span>
+        <h3 class="caps__t">CGI &amp; 3D</h3>
+        <p class="caps__d">Product, environment and look development, rendered to hold up in the hero close-up.</p>
+      </li>
+      <li class="caps__row" data-reveal>
+        <span class="caps__n mono">04</span>
+        <h3 class="caps__t">Motion Design</h3>
+        <p class="caps__d">Titles, graphic packages and design systems that move — for broadcast, social and out-of-home.</p>
+      </li>
+      <li class="caps__row" data-reveal>
+        <span class="caps__n mono">05</span>
+        <h3 class="caps__t">Color</h3>
+        <p class="caps__d">Color-managed finishing in an ACES pipeline, so the grade survives every screen it lands on.</p>
+      </li>
+      <li class="caps__row" data-reveal>
+        <span class="caps__n mono">06</span>
+        <h3 class="caps__t">Gen AI</h3>
+        <p class="caps__d">A tool in an artist’s hands: for previs, plates and elements — always directed, always finished by craft.</p>
+      </li>
+    </ol>
 
-        <article class="featured-card">
-          <div class="featured-thumb">
-            <video class="featured-video" muted loop playsinline preload="metadata">
-              <source src="videos/donjulio.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h3 class="featured-name">DON JULIO</h3>
-        </article>
-
-        <article class="featured-card">
-          <div class="featured-thumb">
-            <video class="featured-video" muted loop playsinline preload="metadata">
-              <source src="videos/audi.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h3 class="featured-name">AUDI</h3>
-        </article>
-
-        <article class="featured-card">
-          <div class="featured-thumb">
-            <video class="featured-video" muted loop playsinline preload="metadata">
-              <source src="videos/16.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h3 class="featured-name">Fiesta Americana</h3>
-        </article>
-
-        <article class="featured-card">
-          <div class="featured-thumb">
-            <video class="featured-video" muted loop playsinline preload="metadata">
-              <source src="videos/13.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h3 class="featured-name">BBVA</h3>
-        </article>
-
-        <article class="featured-card">
-          <div class="featured-thumb">
-            <video class="featured-video" muted loop playsinline preload="metadata">
-              <source src="videos/14.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h3 class="featured-name">AT&amp;T</h3>
-        </article>
-
-        <article class="featured-card">
-          <div class="featured-thumb">
-            <video class="featured-video" muted loop playsinline preload="metadata">
-              <source src="videos/15.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h3 class="featured-name">Clorets</h3>
-        </article>
-
-        <article class="featured-card">
-          <div class="featured-thumb">
-            <video class="featured-video" muted loop playsinline preload="metadata">
-              <source src="videos/20.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h3 class="featured-name">NFL</h3>
-        </article>
-
-        <article class="featured-card">
-          <div class="featured-thumb">
-            <video class="featured-video" muted loop playsinline preload="metadata">
-              <source src="videos/12.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h3 class="featured-name">Pizza Hut</h3>
-        </article>
-
+    <dl class="facts">
+      <div class="facts__i" data-reveal>
+        <dt class="mono">Time zone</dt>
+        <dd>Mexico City, GMT−6. The same working day as New York and Los Angeles.</dd>
       </div>
-      <button class="strip-arrow strip-arrow--right" aria-label="Next">›</button>
-    </div>
+      <div class="facts__i" data-reveal>
+        <dt class="mono">Model</dt>
+        <dd>Senior-led and remote-first. The crew scales to the job — not the overhead.</dd>
+      </div>
+      <div class="facts__i" data-reveal>
+        <dt class="mono">Language</dt>
+        <dd>English · Español. Bilingual from brief to final delivery.</dd>
+      </div>
+    </dl>
+
+    <p class="toolkit mono" data-reveal>
+      <span class="toolkit__k">Pipeline</span>
+      <span>Nuke</span><span>DaVinci Resolve</span><span>After Effects</span><span>Blender</span><span>Cinema 4D</span><span>Unreal Engine 5</span><span>ComfyUI</span><span>ACES</span><span>Frame.io</span>
+    </p>
   </section>
 
-  <section class="trusted-by">
-    <h2 class="trusted-heading">Trusted by</h2>
-    <div class="trusted-strip">
-      <ul class="trusted-track">
-        <li>Evian</li>
-        <li>Pizza Hut</li>
-        <li>Huggies</li>
-        <li>BMW</li>
-        <li>AT&amp;T</li>
-        <li>Clorets</li>
-        <li><img src="images/adidas-logo.png" alt="Adidas" class="trusted-logo"></li>
-        <li>NFL</li>
-        <li>BBVA</li>
-        <li>Fiesta Americana</li>
-        <!-- duplicado para loop continuo -->
-        <li>Evian</li>
-        <li>Pizza Hut</li>
-        <li>Huggies</li>
-        <li>BMW</li>
-        <li>AT&amp;T</li>
-        <li>Clorets</li>
-        <li><img src="images/adidas-logo.png" alt="Adidas" class="trusted-logo"></li>
-        <li>NFL</li>
-        <li>BBVA</li>
-        <li>Fiesta Americana</li>
-      </ul>
+  <!-- CLIENTS ──────────────────────────────────────────── -->
+  <section class="clients" id="clients" aria-labelledby="clients-title">
+    <div class="sec-head">
+      <p class="sec-head__n mono">(03)</p>
+      <h2 id="clients-title" class="sec-head__t">Trusted by</h2>
+      <p class="sec-head__meta mono">Brands we have finished work for</p>
     </div>
+    <ul class="clients__grid">
+      <li><span class="mono">01</span>Adidas</li>
+      <li><span class="mono">02</span>Audi</li>
+      <li><span class="mono">03</span>BMW</li>
+      <li><span class="mono">04</span>NFL</li>
+      <li><span class="mono">05</span>AT&amp;T</li>
+      <li><span class="mono">06</span>Don Julio</li>
+      <li><span class="mono">07</span>BBVA</li>
+      <li><span class="mono">08</span>Evian</li>
+      <li><span class="mono">09</span>Pizza Hut</li>
+      <li><span class="mono">10</span>Huggies</li>
+      <li><span class="mono">11</span>Fiesta Americana</li>
+      <li><span class="mono">12</span>Clorets</li>
+    </ul>
   </section>
 
-  <section id="contacto" class="contact">
-    <div class="section-head">
-      <p class="eyebrow">Let's talk</p>
-      <h2>Contact</h2>
+  <!-- CONTACT ──────────────────────────────────────────── -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="sec-head">
+      <p class="sec-head__n mono">(04)</p>
+      <h2 class="sec-head__t">Contact</h2>
+      <p class="sec-head__meta mono">Mexico City · Working worldwide</p>
     </div>
-    <div class="contact-grid">
-      <article class="contact-card">
-        <h3>Federico Linares Rossi</h3>
-        <p><a href="tel:+525145802448">+52 1 55 4580 2448</a></p>
+    <div class="contact__main">
+      <h3 id="contact-title" class="contact__title">Let’s talk<span class="sr">.</span></h3>
+      <p class="contact__sub">Send the brief, the boards or just the deadline.</p>
+      <a class="btn btn--solid btn--lg" href="mailto:federico.s.linares@gmail.com?cc=martincerdadiez@gmail.com&amp;subject=New%20project%20%E2%80%94%20TUCO%20Post%20Studio">Start a project <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="people">
+      <article class="person">
+        <p class="person__role mono">Production &amp; New Business</p>
+        <h4 class="person__name">Federico Linares Rossi</h4>
         <p><a href="mailto:federico.s.linares@gmail.com">federico.s.linares@gmail.com</a></p>
+        <p><a href="tel:+525545802448">+52 1 55 4580 2448</a> <span class="sep" aria-hidden="true">/</span> <a href="https://wa.me/525545802448" target="_blank" rel="noopener">WhatsApp</a></p>
       </article>
-      <article class="contact-card">
-        <h3>Martin Cerdá Diez</h3>
-        <p><a href="tel:+525656860795">+52 1 56 5686 0795</a></p>
+      <article class="person">
+        <p class="person__role mono">Creative &amp; VFX Lead</p>
+        <h4 class="person__name">Martín Cerdá Diez</h4>
         <p><a href="mailto:martincerdadiez@gmail.com">martincerdadiez@gmail.com</a></p>
+        <p><a href="tel:+525656860795">+52 1 56 5686 0795</a> <span class="sep" aria-hidden="true">/</span> <a href="https://wa.me/525656860795" target="_blank" rel="noopener">WhatsApp</a></p>
       </article>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <p>TUCO Visual Studio · Corregir dirección (cambio de domicilio pendiente)</p>
-  <!-- TODO: reemplazar "#" por el link real cuando exista la cuenta de Instagram -->
-  <a href="#" class="social-link">
-    <svg class="social-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
-      <circle cx="12" cy="13" r="3.5"/>
-    </svg>
-    Instagram
-  </a>
+<footer class="ft">
+  <div class="ft__clip"><svg class="ft__word" viewBox="0 0 1206 772" role="img" aria-label="TUCO"><use href="#tuco-word"/></svg></div>
+  <div class="ft__row mono">
+    <p>© <span data-year>2026</span> TUCO Post Studio</p>
+    <p>Creative craft — Advanced technology</p>
+    <p>CDMX <time data-clock>--:--</time></p>
+    <!-- Instagram: add the URL in INSTAGRAM_URL inside assets/js/tuco.js and the link appears here -->
+    <p class="ft__social" data-instagram hidden><a href="#" target="_blank" rel="noopener">Instagram</a></p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </div>
 </footer>
 
-<!-- Reproductor de proyectos (semi-pantalla completa, con audio) -->
-<div class="player-modal" id="player-modal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
-  <div class="player-backdrop" data-close></div>
-  <div class="player-dialog">
-    <button class="player-close" aria-label="Close" data-close>×</button>
-    <button class="player-nav player-nav--prev" aria-label="Previous project">‹</button>
-    <button class="player-nav player-nav--next" aria-label="Next project">›</button>
-    <video class="player-video" controls playsinline controlslist="nodownload"></video>
-    <p class="player-title"></p>
+<!-- PLAYER ───────────────────────────────────────────────── -->
+<dialog class="player" data-player aria-label="Video player">
+  <div class="player__bar">
+    <p class="player__n mono" data-player-n></p>
+    <p class="player__title"><span data-player-title></span> <span class="player__sub" data-player-sub></span></p>
+    <div class="player__ctrl">
+      <button class="player__btn" type="button" data-player-prev aria-label="Previous film">←</button>
+      <button class="player__btn" type="button" data-player-next aria-label="Next film">→</button>
+      <button class="player__btn player__close" type="button" data-player-close aria-label="Close player">Close <span aria-hidden="true">×</span></button>
+    </div>
   </div>
-</div>
+  <div class="player__stage">
+    <video class="player__video" controls playsinline controlslist="nodownload" data-player-video></video>
+  </div>
+  <p class="player__credits mono" data-player-credits></p>
+</dialog>
 
-<script src="script.js"></script>
+<div class="cursor mono" data-cursor aria-hidden="true"><span class="cursor__dot"></span><span data-cursor-label>Play</span></div>
+
+<script src="assets/js/tuco.js" defer></script>
 </body>
 </html>
